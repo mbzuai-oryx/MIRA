@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="VANE-Bench">
+  <meta name="keywords" content="benchmark, anomalies">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIDEOMOLMO: Spatio-Temporal Grounding meets Pointing</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!--   <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  <style>
+    .video-wrapper {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .caption {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      /* Change as needed */
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MIRA: A Novel Framework for Fusing Modalities in Medical RAG</h1>
+            <div class="is-size-5 publication-authors">
+              <div class="author-blocks">
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=Z_YOUR_ID">Jinhong Wang</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.tajamulashraf.com">Tajamul Ashraf</a><sup>1</sup><sup>*</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=Z_YOUR_ID">Zongyan Han</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://people.aalto.fi/jorma.laaksonen">Jorma Laaksonen</a><sup>2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://mbzuai.ac.ae/study/faculty/rao-muhammad-anwer/">Rao Muhammad Anwer</a><sup>1</sup>
+                </span>
+              </div>
+
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Mohamed Bin Zayed University of Artificial
+                  Intelligence</span><br>
+                <span class="author-block"><sup>2</sup>Aalto University</span>
+              </div>
+
+              <!--             <div class="Publication venue">
+            <span class="conference"><b>NAACL 2025</b></span>
+          </div> -->
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2506.05336"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="http://arxiv.org/abs/2506.05336" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Video Link.
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="https://github.com/mbzuai-oryx/VideoMolmo"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- Dataset Link. -->
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/ghazishazan/VPoS/tree/main"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="far fa-images"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="Point/track to all the cells in the video" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cells.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="Point to the nearest traffic light" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/aut_driving.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-construction">
+          <video poster="Point to the carnivore for the robot to pick up" id="construction" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/robotics.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-wolf">
+          <video poster="Point to the ball" id="wolf" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dog_vmolmo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-basketball">
+          <video poster="Point to the knife used by the person" id="basketball" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/egocentric.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="Point to the horse running around" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/horse_vmolmo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+</section> -->
+
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item item-steve">
+            <div class="video-wrapper">
+              <p class="caption">Point/track to all the cells in the video</p>
+              <video id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/cells_resized.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="item item-chair-tp">
+            <div class="video-wrapper">
+              <p class="caption">Point to the nearest traffic light</p>
+              <video id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/aut_driving.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="item item-construction">
+            <div class="video-wrapper">
+              <p class="caption">Point to the carnivore for the robot to pick up</p>
+              <video id="construction" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/robotics.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="item item-wolf">
+            <div class="video-wrapper">
+              <p class="caption">Point to the ball</p>
+              <video id="wolf" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dog_vmolmo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="item item-basketball">
+            <div class="video-wrapper">
+              <p class="caption">Point to the knife used by the person</p>
+              <video id="basketball" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/egocentric.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="item item-shiba">
+            <div class="video-wrapper">
+              <p class="caption">Point to the horse running around</p>
+              <video id="shiba" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/horse_vmolmo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Abstract -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h4 class="subtitle has-text-justified">
+          <div
+            style="max-width: 800px; margin: auto; font-family: 'Segoe UI', sans-serif; line-height: 1.6; font-size: 16px; color: #333;">
+            <p>
+              <strong>Multimodal Large Language Models (MLLMs)</strong> have significantly advanced AI-assisted medical
+              diagnosis, but they often generate factually inconsistent responses that deviate from established medical
+              knowledge.
+            </p>
+            <p>
+              <strong>Retrieval-Augmented Generation (RAG)</strong> improves factual accuracy by integrating external
+              sources, yet it introduces two major challenges:
+            </p>
+            <ul>
+              <li><strong>Insufficient retrieval</strong> can overlook critical information, while <strong>excessive
+                  retrieval</strong> may introduce irrelevant or misleading content, undermining output quality.</li>
+              <li>Even when models initially produce accurate answers, <strong>over-reliance on retrieved data</strong>
+                can later lead to factual inconsistencies.</li>
+            </ul>
+            <p>
+              To overcome these limitations, we propose the <strong>Multimodal Intelligent Retrieval and Augmentation
+                (MIRA)</strong> framework—designed to optimize factual consistency in MLLMs.
+            </p>
+            <p>MIRA is built upon two key components:</p>
+            <ol>
+              <li>
+                A calibrated <strong>Rethinking and Rearrangement module</strong> that dynamically adjusts the quantity
+                of retrieved contexts to manage factual risk.
+              </li>
+              <li>
+                A <strong>medical RAG framework</strong> that combines image embeddings and a domain-specific medical
+                knowledge base, with a query-rewriting module to support efficient multimodal reasoning.
+              </li>
+            </ol>
+            <p>
+              This dual mechanism empowers the model to integrate both its inherent knowledge and external medical
+              references effectively.
+            </p>
+            <p>
+              Our evaluation on public medical visual question answering and report generation benchmarks shows that
+              <strong>MIRA substantially improves factual accuracy and overall performance</strong>, achieving new
+              state-of-the-art results.
+            </p>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">🔥Highlights</h2>
+          <div class="content has-text-justified">
+            Key contributions of MIRA:
+
+            <ol type="1">
+              <li>
+                We introduce <b>MIRA</b>, the first retrieval-augmented generation (RAG) framework that seamlessly
+                integrates structured multimodal retrieval with adaptive reasoning, outperforming existing methods in
+                clinical decision-making accuracy and efficiency.
+              </li><br>
+              <li>
+                Unlike static retrieval paradigms, our <b>Context-Rethink module</b> employs an iterative
+                “rethink-rearrange” cycle for dynamic <i>k</i>-selection, ensuring precision in evidence selection. This
+                is further enhanced by <b>Chain-of-Thought (CoT) reasoning</b> to maintain high factual consistency in
+                medical VQA.
+              </li><br>
+              <li>
+                Our architecture introduces a novel <b>dual-pathway retrieval mechanism</b> featuring specialized vision
+                and language encoders for fine-grained image-text alignment. Additionally, a curated <b>citation
+                  module</b> improves interpretability, raising the standard for transparency in medical AI.
+              </li><br>
+              <li>
+                MIRA achieves <b>state-of-the-art (SOTA)</b> performance on MedVQA by significantly reducing factual
+                errors through online search augmentation and adaptive CoT-based verification. It also delivers <b>9×
+                  faster inference</b> compared to 72B parameter models, enabling real-time, high-precision medical
+                reasoning.
+              </li><br>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Model Arch-->
+  <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">
+          <width="40" style="vertical-align: bottom;"> MIRA : Architecture
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              <b>MIRA</b> consists of four key components designed for end-to-end training and efficient inference:
+              (1) a dual-pathway retrieval system with dedicated vision and language encoders,
+              (2) a context-rethink module for dynamic retrieval control,
+              (3) a multimodal fusion module that aligns retrieved knowledge with image features, and
+              (4) a decoder-only large language model (LLM) enhanced with Chain-of-Thought (CoT) reasoning;
+              along with an optional citation module for post-hoc interpretability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="static/images/architecture.png">
+            <figcaption>Overview of the MIRA (Multimodal Intelligent Retrieval and Augmentation) pipeline. The system
+              integrates image
+              and text-based retrieval to enhance the generation process.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--Model labeling pipeline -->
+  <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">
+          <width="40" style="vertical-align: bottom;"> VideoMolmo Training Dataset: Annotation Pipeline
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="static/images/videomolmo_annotation_diagram.jpg">
+            <figcaption><b>VideoMolmo annotation pipeline:</b> We construct point-level supervision from frame-
+              level masks using a semi-automatic process. For each frame, k points are sampled on the mask and
+              passed to SAM2 to generate candidate masks. The point with the highest-IoU candidate mask (w.r.t.
+              ground truth) is selected as the optimal annotation. </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Quantitative Results-->
+  <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">
+          <width="40" style="vertical-align: bottom;">VideoMolmo: Quantitative Results
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p> We evaluate <b>VideoMolmo</b> on four challenging tasks: point grounding, counting, referring
+              segmentation, and reasoning video object segmentation </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="static/images/videomolmo_quantitative_results.png">
+            <figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Qualitative Results-->
+  <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">
+          <width="40" style="vertical-align: bottom;">VideoMolmo: Qualitative Results on VPoS-Bench
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <!-- <p> We evaluate <b>VideoMolmo</b> on four challenging tasks: point grounding, counting, referring
+            segmentation, and reasoning video object segmentation </p> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="static/images/benchmark_diagram.png">
+            <figcaption> VideoMolmo demonstrates robust generalization and fine-grained spatio-temporal
+              grounding across diverse out-of-distribution scenarios from our proposed benchmark, for instance,
+              correctly pointing to traffic lights (2nd row) in challenging driving scenes despite never encountering
+              such scenarios during training.
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{ahmad2025videomolmospatiotemporalgroundingmeets,
+      title={VideoMolmo: Spatio-Temporal Grounding Meets Pointing}, 
+      author={Ghazi Shazan Ahmad and Ahmed Heakl and Hanan Gani and Abdelrahman Shaker and Zhiqiang Shen and Ranjay Krishna and Fahad Shahbaz Khan and Salman Khan},
+      year={2025},
+      eprint={2506.05336},
+      archivePrefix={arXiv},
+      primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Page source code was adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project
+              page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
