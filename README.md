@@ -11,7 +11,7 @@
     <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
 </p>
 <h1 align="left" style="margin:24px 0;">
-  Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks
+  MIRA: ANovel Framework for Fusing Modalities in Medical RAG
 </h1>
 
 <div align="center">
