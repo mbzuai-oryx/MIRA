@@ -13,7 +13,7 @@
 
 <div align="center">
 
-[![arXiv:2505.24876](https://img.shields.io/badge/https://arxiv.org/abs/2507.07902)](https://arxiv.org/abs/2507.07902)
+[![arXiv](https://img.shields.io/badge/arXiv-2507.07902-b31b1b)](https://arxiv.org/abs/2507.07902)
 [![Hugging Face](https://img.shields.io/badge/Dataset-HuggingFace-orange?logo=huggingface)](https://huggingface.co/datasets/Tajamul21/Agent-X)
 [![Download](https://img.shields.io/badge/Dataset-Download-blue?logo=cloud)](https://github.com/Tajamul21/Agent-X-Benchmark/releases/download/v0.1.0/agent-X_dataset.zip)
 [![Website](https://img.shields.io/badge/View-website-green)](#-)
@@ -22,10 +22,11 @@
 
 
 
-#### Authors: Jinhong Wang, [Tajamul Ashraf](https://www.tajamulashraf.com)\*,  Zongyan Han, Jorma Laaksonen, and [Rao Muhammad Anwer](https://mbzuai.ac.ae/study/faculty/rao-muhammad-anwer/),  
+
+#### Authors: [Jinhong Wang](https://scholar.google.com/citations?user=Z_YOUR_ID)\*, [Tajamul Ashraf](https://www.tajamulashraf.com)\*, [Zongyan Han](https://scholar.google.com/citations?user=Z_YOUR_ID), [Jorma Laaksonen](https://people.aalto.fi/jorma.laaksonen), [Rao Muhammad Anwer](https://mbzuai.ac.ae/study/faculty/rao-muhammad-anwer/)
 
 
-\* Equally contribution, **Correspondence:** [Tajamul Ashraf](https://www.tajamulashraf.com)
+\* Equal contribution, **Correspondence:** [Tajamul Ashraf](https://www.tajamulashraf.com)
 <div align="left" style="margin:24px 0;">
   <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif"
        width="100%" />
@@ -35,13 +36,11 @@
 
 ## Updates
 
+- **[2025-07-09]**: 🎉 MIRA paper **accepted at [ACM Multimedia 2025](https://acmmm.org/2025)**  
+- **[2025-06-02]**: MIRA paper published on [arXiv:2507.07902](https://arxiv.org/abs/2507.07902)  
+- **[2025-05-29]**: Released **evaluation & deployment code** for MIRA  
+- **[2025-05-22]**: Published the **MIRA dataset on [Hugging Face](https://huggingface.co/datasets)**  
 
-
-[2025-06-02]: **MIRA paper published on [![arXiv](https://img.shields.io/badge/https://arxiv.org/abs/2507.07902)](https://arxiv.org/abs/2507.07902)**
-
-[2025-05-29]: **Released evaluation & deployment code for MIRA** 
- 
-[2025-05-22]:  **Published the MIRA dataset on Hugging Face** 
 
 ## Introduction
 
