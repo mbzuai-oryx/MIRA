@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VANE-Bench">
+  <meta name="keywords" content="benchmark, anomalies">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIDEOMOLMO: Spatio-Temporal Grounding meets Pointing</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+<!--   <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  <style>
+    .video-wrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.caption {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333; /* Change as needed */
+  margin-bottom: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VideoMolmo: Spatio-Temporal Grounding meets Pointing</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=qxmI8TkAAAAJ&hl=en">Ghazi Shazan Ahmad*</a><sup>1</sup>,</span>
+              <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=JcWO9OUAAAAJ&hl=en">Ahmed Heakl*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://hananshafi.github.io/">Hanan Gani</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://amshaker.github.io/">Abdelrahman Shaker</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zhiqiangshen.com/">Zhiqiang Shen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ranjaykrishna.com/index.html">Ranjay Krishna</a><sup>2,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/fahadkhans/home">Fahad Khan</a><sup>1,4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://salman-h-khan.github.io">Salman Khan</a><sup>1,5</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Mohamed Bin Zayed University of Artificial Intelligence</span>
+            <span class="author-block"><sup>2</sup>University of Washington</span>
+            <span class="author-block"><sup>3</sup>Allen Institute for Artificial Intelligence</span>
+            <span class="author-block"><sup>4</sup>Linköping University</span>
+            <span class="author-block"><sup>5</sup>Australian National University</span>
+          </div>
+
+<!--             <div class="Publication venue">
+            <span class="conference"><b>NAACL 2025</b></span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2506.05336"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="http://arxiv.org/abs/2506.05336"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mbzuai-oryx/VideoMolmo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/ghazishazan/VPoS/tree/main"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="Point/track to all the cells in the video" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cells.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="Point to the nearest traffic light" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/aut_driving.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-construction">
+          <video poster="Point to the carnivore for the robot to pick up" id="construction" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/robotics.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-wolf">
+          <video poster="Point to the ball" id="wolf" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dog_vmolmo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-basketball">
+          <video poster="Point to the knife used by the person" id="basketball" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/egocentric.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="Point to the horse running around" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/horse_vmolmo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+</section> -->
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item item-steve">
+          <div class="video-wrapper">
+            <p class="caption">Point/track to all the cells in the video</p>
+            <video id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/cells_resized.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item item-chair-tp">
+          <div class="video-wrapper">
+            <p class="caption">Point to the nearest traffic light</p>
+            <video id="chair-tp" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/aut_driving.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item item-construction">
+          <div class="video-wrapper">
+            <p class="caption">Point to the carnivore for the robot to pick up</p>
+            <video id="construction" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/robotics.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item item-wolf">
+          <div class="video-wrapper">
+            <p class="caption">Point to the ball</p>
+            <video id="wolf" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/dog_vmolmo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item item-basketball">
+          <div class="video-wrapper">
+            <p class="caption">Point to the knife used by the person</p>
+            <video id="basketball" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/egocentric.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="item item-shiba">
+          <div class="video-wrapper">
+            <p class="caption">Point to the horse running around</p>
+            <video id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/horse_vmolmo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Abstract -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h4 class="subtitle has-text-justified">
+          <b>VideoMolmo</b> is a a large multimodal model tailored for fine-grained spatio-temporal pointing 
+          conditioned on textual descriptions. Building upon the Molmo architecture, VideoMolmo incorporates a 
+          temporal module utilizing an attention mechanism to condition each frame on preceding frames, ensuring
+           temporal consistency. Additionally, our novel temporal mask fusion pipeline employs SAM2 for bidirectional
+            point propagation, significantly enhancing coherence across video sequences. This two-step decomposition 
+            i.e., first using the LLM to generate precise pointing coordinates, then relying on a sequential mask-fusion
+             module to produce coherent segmentation, not only simplifies the task for the language model but also 
+             enhances interpretability. Due to the lack of suitable datasets, we curate a comprehensive dataset 
+             comprising 72k video-caption pairs annotated with 100k object points. To evaluate the generalization
+              of VideoMolmo, we introduce VPoS-Bench, a challenging out-of-distribution benchmark spanning five
+               real-world scenarios: Cell Tracking, Egocentric Vision, Autonomous Driving, Video-GUI Interaction, 
+               and Robotics. We also evaluate our model on Referring Video Object Segmentation (Refer-VOS) and 
+               Reasoning VOS tasks. In comparison to existing models, VideoMolmo substantially improves spatio-temporal 
+               pointing accuracy and reasoning capability.
+        </h4>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section"  style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">🔥Highlights</h2>
+          <div class="content has-text-justified">
+              Key contributions of VideoMolmo: 
+  
+            <ol type="1">
+              <li>We introduce <b>VideoMolmo </b>, an LMM that accepts natural-language queries and produces point-level predictions for
+                target objects across entire video sequences, ensuring temporal consistency.</li><br>
+                <li>We further introduce Temporal module to leverage past temporal context and propose a novel temporal
+                  mask fusion pipeline for enhanced temporal
+                  coherence.</li><br>
+              <li>To achieve fine-grained spatio-temporal pointing, we introduce a comprehensive dataset of 72k video-caption pairs
+                and 100k object points.</li><br>
+              <li>To evaluate the generalization of VideoMolmo, we introduce <b>VPoS-Bench</b>,
+                a challenging out-of-distribution benchmark spanning five real-world scenarios: Cell Tracking,
+                Egocentric Vision, Autonomous Driving, Video-GUI Interaction, and Robotics. We also assess our
+                model on Referring Video Object Segmentation (Ref-VOS) and Reasoning VOS tasks. </li><br>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--Model Arch-->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><width="40" style="vertical-align: bottom;"> VideoMolmo : Architecture</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p>
+            <b>VideoMolmo</b> consists of four end-to-end trainable components: (1) a visual
+            encoder, (2) a temporal module, (3) visual projector (4) a decoder-only large language model (LLM);
+            and a post-processing module.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="static/images/videomolmo_main_diagram.jpg">
+          <figcaption>VideoMolmo is trained end-to-end for spatio-temporal pointing conditioned on textual instructions.
+            It features a visual encoder, a temporal module, an LLM, and a post-processing module. The visual
+            encoder processes the video frames and outputs multi-crop features. To maintain temporal consistency,
+            we introduce a temporal module which employs a cross-attention operation and ensures that the
+            current frame attends to the information in previous frames. The resultant features are then passed
+            to the LLM, which, along with the textual query, processes this information and outputs the points
+            corresponding to the objects. Our post-processing module takes the predictions from VideoMolmo
+            and uses SAM2 to propagate the points across all video frames bidirectionally.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--Model labeling pipeline -->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><width="40" style="vertical-align: bottom;"> VideoMolmo Training Dataset: Annotation Pipeline</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="static/images/videomolmo_annotation_diagram.jpg">
+          <figcaption><b>VideoMolmo annotation pipeline:</b> We construct point-level supervision from frame-
+            level masks using a semi-automatic process. For each frame, k points are sampled on the mask and
+            passed to SAM2 to generate candidate masks. The point with the highest-IoU candidate mask (w.r.t.
+            ground truth) is selected as the optimal annotation.         </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Quantitative Results-->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><width="40" style="vertical-align: bottom;">VideoMolmo: Quantitative Results</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p> We evaluate <b>VideoMolmo</b> on four challenging tasks: point grounding, counting, referring
+            segmentation, and reasoning video object segmentation </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="static/images/videomolmo_quantitative_results.png">
+          <figcaption>      </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Qualitative Results-->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><width="40" style="vertical-align: bottom;">VideoMolmo: Qualitative Results on VPoS-Bench</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <!-- <p> We evaluate <b>VideoMolmo</b> on four challenging tasks: point grounding, counting, referring
+            segmentation, and reasoning video object segmentation </p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="static/images/benchmark_diagram.png">
+          <figcaption>  VideoMolmo demonstrates robust generalization and fine-grained spatio-temporal
+            grounding across diverse out-of-distribution scenarios from our proposed benchmark, for instance,
+            correctly pointing to traffic lights (2nd row) in challenging driving scenes despite never encountering
+            such scenarios during training.    </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{ahmad2025videomolmospatiotemporalgroundingmeets,
+      title={VideoMolmo: Spatio-Temporal Grounding Meets Pointing}, 
+      author={Ghazi Shazan Ahmad and Ahmed Heakl and Hanan Gani and Abdelrahman Shaker and Zhiqiang Shen and Ranjay Krishna and Fahad Shahbaz Khan and Salman Khan},
+      year={2025},
+      eprint={2506.05336},
+      archivePrefix={arXiv},
+      primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+           Page source code was adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
