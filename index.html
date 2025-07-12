@@ -6,7 +6,7 @@
   <meta name="description" content="VANE-Bench">
   <meta name="keywords" content="benchmark, anomalies">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VIDEOMOLMO: Spatio-Temporal Grounding meets Pointing</title>
+  <title>MIRA: A Novel Framework for Fusing Modalities in Medical RAG</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -68,13 +68,13 @@
             <div class="is-size-5 publication-authors">
               <div class="author-blocks">
                 <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=Z_YOUR_ID">Jinhong Wang</a><sup>1</sup>,
+                  <a href="https://www.linkedin.com/in/jinhong-wang-531498289/">Jinhong Wang</a><sup>1</sup>,
                 </span>
                 <span class="author-block">
                   <a href="https://www.tajamulashraf.com">Tajamul Ashraf</a><sup>1</sup><sup>*</sup>,
                 </span>
                 <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=Z_YOUR_ID">Zongyan Han</a><sup>1</sup>,
+                  <a href="https://www.linkedin.com/in/zongyan-han-2b98b3367/">Zongyan Han</a><sup>1</sup>,
                 </span>
                 <span class="author-block">
                   <a href="https://people.aalto.fi/jorma.laaksonen">Jorma Laaksonen</a><sup>2</sup>,
@@ -89,6 +89,7 @@
                 <span class="author-block"><sup>1</sup>Mohamed Bin Zayed University of Artificial
                   Intelligence</span><br>
                 <span class="author-block"><sup>2</sup>Aalto University</span>
+                
               </div>
 
               <!--             <div class="Publication venue">
@@ -99,7 +100,7 @@
                 <div class="publication-links">
                   <!-- PDF Link. -->
                   <span class="link-block">
-                    <a href="https://arxiv.org/pdf/2506.05336"
+                    <a href="https://arxiv.org/pdf/2507.07902"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -108,7 +109,7 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="http://arxiv.org/abs/2506.05336" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://arxiv.org/pdf/2507.07902" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
                       </span>
@@ -127,7 +128,7 @@
               </span> -->
                   <!-- Code Link. -->
                   <span class="link-block">
-                    <a href="https://github.com/mbzuai-oryx/VideoMolmo"
+                    <a href="https://github.com/mbzuai-oryx/MIRA"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
@@ -137,7 +138,7 @@
                   </span>
                   <!-- Dataset Link. -->
                   <span class="link-block">
-                    <a href="https://huggingface.co/datasets/ghazishazan/VPoS/tree/main"
+                    <a href=""
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="far fa-images"></i>
@@ -147,6 +148,7 @@
                 </div>
 
               </div>
+              <span class="author-block"><b>📌 This paper is accepted at ACM Multimedia 2025</b></span>
             </div>
           </div>
         </div>
@@ -201,69 +203,53 @@
 
 
 
-  <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
 
-          <div class="item item-steve">
-            <div class="video-wrapper">
-              <p class="caption">Point/track to all the cells in the video</p>
-              <video id="steve" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/cells_resized.mp4" type="video/mp4">
-              </video>
-            </div>
+        <div class="item item-steve">
+          <div class="image-wrapper">
+            <p class="caption">In the input image, is it a malignant lesion?</p>
+            <img src="./static/images/t1.png" alt="Cells tracking result" height="100%">
           </div>
-
-          <div class="item item-chair-tp">
-            <div class="video-wrapper">
-              <p class="caption">Point to the nearest traffic light</p>
-              <video id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/aut_driving.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="item item-construction">
-            <div class="video-wrapper">
-              <p class="caption">Point to the carnivore for the robot to pick up</p>
-              <video id="construction" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/robotics.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="item item-wolf">
-            <div class="video-wrapper">
-              <p class="caption">Point to the ball</p>
-              <video id="wolf" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/dog_vmolmo.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="item item-basketball">
-            <div class="video-wrapper">
-              <p class="caption">Point to the knife used by the person</p>
-              <video id="basketball" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/egocentric.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="item item-shiba">
-            <div class="video-wrapper">
-              <p class="caption">Point to the horse running around</p>
-              <video id="shiba" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/horse_vmolmo.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
         </div>
+
+        <div class="item item-chair-tp">
+          <div class="image-wrapper">
+            <p class="caption">CT of the chest demonstrating right-sided pneumonia.</p>
+            <img src="./static/images/t2.png" alt="Autonomous driving result" height="100%">
+          </div>
+        </div>
+
+        <div class="item item-construction">
+          <div class="image-wrapper">
+            <p class="caption"> MRI of Brain and MRA Brain showing encephalomalacia with extensive changes.</p>
+            <img src="./static/images/t3.png" alt="Robotics interaction" height="100%">
+          </div>
+        </div>
+
+        <div class="item item-wolf">
+          <div class="image-wrapper">
+            <p class="caption">What is the image showing?</p>
+            <img src="./static/images/t4.png" alt="Dog playing with ball" height="100%">
+          </div>
+        </div>
+
+        <div class="item item-basketball">
+          <div class="image-wrapper">
+            <p class="caption">Image showing Gastrointestinal Stromal Tumor after surgical removal.</p>
+            <img src="./static/images/t5.png" alt="Egocentric vision" height="100%">
+          </div>
+        </div>
+
+       
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <!-- Abstract -->
@@ -401,11 +387,11 @@
 
 
   <!--Model labeling pipeline -->
-  <section class="section">
+  <!-- <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">
-          <width="40" style="vertical-align: bottom;"> VideoMolmo Training Dataset: Annotation Pipeline
+          <width="40" style="vertical-align: bottom;"> x Training Dataset: Annotation Pipeline
         </h2>
       </div>
     </div>
@@ -417,13 +403,13 @@
             <p></p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="columns is-centered has-text-centered">
+  <!-- <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
           <figure style="text-align: center;">
-            <img id="teaser" width="100%" src="static/images/videomolmo_annotation_diagram.jpg">
-            <figcaption><b>VideoMolmo annotation pipeline:</b> We construct point-level supervision from frame-
+            <img id="teaser" width="100%" src="static/images/x_annotation_diagram.jpg">
+            <figcaption><b>x annotation pipeline:</b> We construct point-level supervision from frame-
               level masks using a semi-automatic process. For each frame, k points are sampled on the mask and
               passed to SAM2 to generate candidate masks. The point with the highest-IoU candidate mask (w.r.t.
               ground truth) is selected as the optimal annotation. </figcaption>
@@ -431,7 +417,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!--Quantitative Results-->
@@ -439,7 +425,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">
-          <width="40" style="vertical-align: bottom;">VideoMolmo: Quantitative Results
+          <width="40" style="vertical-align: bottom;">MIRA: Quantitative Results
         </h2>
       </div>
     </div>
@@ -448,8 +434,8 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <p> We evaluate <b>VideoMolmo</b> on four challenging tasks: point grounding, counting, referring
-              segmentation, and reasoning video object segmentation </p>
+            <p> Performance comparison of multimodal report generation abilities between MIRA and other frameworks
+              specialized on measured on 1000 samples split from MIMIC-CXR</p>
           </div>
         </div>
       </div>
@@ -457,12 +443,33 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
           <figure style="text-align: center;">
-            <img id="teaser" width="100%" src="static/images/videomolmo_quantitative_results.png">
+            <img id="teaser" width="100%" src="static/images/table1.png">
             <figcaption>
           </figure>
         </div>
       </div>
     </div>
+  </section>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p style="text-align: center;">Performance comparison of PMC-VQA question set correctness analysis</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="static/images/table2.png">
+          <figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
   </section>
 
 
@@ -471,7 +478,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">
-          <width="40" style="vertical-align: bottom;">VideoMolmo: Qualitative Results on VPoS-Bench
+          <width="40" style="vertical-align: bottom;">MIRA: Qualitative Results
         </h2>
       </div>
     </div>
@@ -480,7 +487,7 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <!-- <p> We evaluate <b>VideoMolmo</b> on four challenging tasks: point grounding, counting, referring
+            <!-- <p> We evaluate <b>x</b> on four challenging tasks: point grounding, counting, referring
             segmentation, and reasoning video object segmentation </p> -->
           </div>
         </div>
@@ -489,11 +496,13 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
           <figure style="text-align: center;">
-            <img id="teaser" width="100%" src="static/images/benchmark_diagram.png">
-            <figcaption> VideoMolmo demonstrates robust generalization and fine-grained spatio-temporal
-              grounding across diverse out-of-distribution scenarios from our proposed benchmark, for instance,
-              correctly pointing to traffic lights (2nd row) in challenging driving scenes despite never encountering
-              such scenarios during training.
+            <img id="teaser" width="100%" src="static/images/fig.png">
+            <figcaption> Visualization of attention distribution across all
+              slices of input sequences, emphasizing the model’s focus on
+              critical tokens. This highlights how the model has learned
+              selectively attends to important parts of the input, guiding
+              the generation process for more accurate and contextually
+              relevant responses.
           </figure>
         </div>
       </div>
@@ -504,13 +513,14 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{ahmad2025videomolmospatiotemporalgroundingmeets,
-      title={VideoMolmo: Spatio-Temporal Grounding Meets Pointing}, 
-      author={Ghazi Shazan Ahmad and Ahmed Heakl and Hanan Gani and Abdelrahman Shaker and Zhiqiang Shen and Ranjay Krishna and Fahad Shahbaz Khan and Salman Khan},
+      <pre><code>@misc{mira,
+      title={MIRA: A Novel Framework for Fusing Modalities in Medical RAG}, 
+      author={Jinhong Wang and Tajamul Ashraf and Zongyan Han and Jorma Laaksonen and Rao Mohammad Anwer},
       year={2025},
-      eprint={2506.05336},
+      eprint={2507.07902},
       archivePrefix={arXiv},
-      primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.07902}, 
 }</code></pre>
     </div>
   </section>
