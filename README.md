@@ -49,6 +49,7 @@ Multimodal Large Language Models (MLLMs) have significantly advanced AI-assisted
 <div align="center">
  <img src="images/teasor.png" width="800"/>
 </div>
+
 ## What is MIRA?
 
 We introduce the Multimodal Intelligent Retrieval and Augmentation (MIRA) framework, designed to optimize factual accuracy in MLLM. MIRA consists of two key components: (1) a calibrated Rethinking and Rearrangement module that dynamically adjusts the number of retrieved contexts to manage factual risk, and (2) A medical RAG framework integrating image embeddings and a medical knowledge base with a query-rewrite module for efficient multimodal reasoning. This enables the model to integrate both its inherent knowledge and external references effectively. Our evaluation of publicly available medical VQA and report generation benchmarks demonstrates that MIRA substantially enhances factual accuracy and overall performance, achieving new state-of-the-art results.
