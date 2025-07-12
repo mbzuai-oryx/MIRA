@@ -1,6 +1,6 @@
-# VideoMolmo: Spatio-Temporal Grounding meets Pointing
+# MIRA: A Novel Framework for Fusing Modalities in Medical RAG
 
-This is the repository that contains source code for the [VideoMolmo website](https://mbzuai-oryx.github.io/VideoMolmo/).
+This is the repository that contains the source code for the [MIRA website](https://mbzuai-oryx.github.io/MIRA/).
 
 
 
