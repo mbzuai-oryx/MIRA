@@ -78,7 +78,7 @@ To be released...
 
 
 ## 📝 Citation
-If you use Agent-Xin your research, please cite the following paper:
+If you use miRA in your research, please cite the following paper:
 ```
 @misc{mira,
       title={MIRA: A Novel Framework for Fusing Modalities in Medical RAG}, 
