@@ -71,9 +71,7 @@ We introduce the Multimodal Intelligent Retrieval and Augmentation (MIRA) framew
 To be released...
 
 
-<div align="center">
- <img src="images/vis.png" width="800"/>
-</div>
+
 
 
 
